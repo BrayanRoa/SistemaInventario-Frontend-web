@@ -26,6 +26,7 @@ export class UsuarioComponent implements OnInit {
     const password = this.form.value.password;
 
     if(usuario==="jperez" && password==="569641"){
+      this.router.navigateByUrl("administracion")
       this.fakeLoading();
     }else{
       this.error();

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdministradorComponent } from './administrador/administrador.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
 //ANGULAR MATERIAL
@@ -15,7 +14,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
-    AdministradorComponent,
     UsuarioComponent
   ],
   imports: [
@@ -29,7 +27,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     // FormControl
   ],
   exports:[
-    AdministradorComponent,
     UsuarioComponent,
   
   ]

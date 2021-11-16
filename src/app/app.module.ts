@@ -9,18 +9,20 @@ import { LoginModule } from './login/login.module';
 // import { FormControl, FormsModule } from '@angular/forms';
 
 import { FormsModule} from '@angular/forms';
-import { AdministradorModule } from './administrador/administrador.module';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
+// import { PrincipalComponent } from './administracion/principal/principal.component';
+import { AdministracionModule } from './administracion/administracion.module';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // PrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +32,8 @@ registerLocaleData(en);
     FormsModule,
     // ReactiveFormsModule,
     LoginModule,
-    AdministradorModule,
     HttpClientModule,
+    AdministracionModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
