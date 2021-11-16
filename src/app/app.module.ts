@@ -16,6 +16,7 @@ import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 // import { PrincipalComponent } from './administracion/principal/principal.component';
 import { AdministracionModule } from './administracion/administracion.module';
+import { DataTablesModule } from "angular-datatables";
 
 registerLocaleData(en);
 
@@ -30,10 +31,11 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     MatSliderModule,
     FormsModule,
-    // ReactiveFormsModule,
     LoginModule,
     HttpClientModule,
-    AdministracionModule
+    AdministracionModule,
+    DataTablesModule
+    // ReactiveFormsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 
-
+import { DataTablesModule } from "angular-datatables";
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -31,7 +31,8 @@ import { ProveedoresComponent } from './pages/proveedores/proveedores.component'
     NzLayoutModule,
     NzIconModule,
     NzDropDownModule,
-    NzButtonModule
+    NzButtonModule,
+    DataTablesModule
   ]
 })
 export class AdministracionModule { }
