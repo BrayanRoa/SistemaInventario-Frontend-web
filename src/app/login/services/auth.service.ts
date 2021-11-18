@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment';
 import { autenticado } from '../interfaces/autenticado';
 import { Router } from '@angular/router';
 import { catchError, map, tap } from "rxjs/operators";
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,26 +20,20 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  login(correo:string, password:string){
+  login(nombreUsuario:string, password:string):Observable<any>{
+
     const url = `${this.baseURL}/auth/login`;
-    const body = {correo, password};
+    const body = {nombreUsuario, password};
+
+    console.log("esto es ", JSON.stringify(body))
 
     return this.http.post<any>(url, body).pipe(
       tap(respuesta =>{
+        console.log(respuesta);
         if(respuesta.token!=""){
-          localStorage.setItem('token', respuesta.token),
-          localStorage.setItem('nombre', respuesta.nombre),
-          localStorage.setItem('apellido', respuesta.apellido)
+          localStorage.setItem('token', respuesta.token)
         }
-
-        this._usuario={
-          cedula : respuesta.usuario.cedula,
-          nombre : respuesta.usuario.nombre
-        }
-        
-      }),
-      map(resp => resp.usuario),
-      catchError( err =>of(err))
+      })
     );
   }
 

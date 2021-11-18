@@ -20,8 +20,6 @@ export class PrincipalComponent implements OnInit {
   }
 
   salir(){
-    localStorage.removeItem("nombre");
-    localStorage.removeItem("apellido");
     localStorage.removeItem("token");
     this.router.navigateByUrl("/login");
   }

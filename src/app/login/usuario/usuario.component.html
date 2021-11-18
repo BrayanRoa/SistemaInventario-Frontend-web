@@ -9,6 +9,7 @@
       ></mat-spinner>
   
       <div class="login">
+
         <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
           <img src="../../../assets/img/programmer.png" alt="" width="50%" />
           <h1>Login - Usuario</h1>
@@ -19,7 +20,7 @@
               type="text"
               matInput
               autocomplete="off"
-              formControlName="usuario"
+              formControlName="nombreUsuario"
             />
           </mat-form-field>
   

@@ -16,5 +16,4 @@ export class ProveedoresService {
     return this.http.get<any>(`${this.baseURL}/proveedores`);
   }
 
-  
 }

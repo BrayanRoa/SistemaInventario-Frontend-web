@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -12,8 +12,17 @@ export class EmpleadosService {
 
   constructor(private http: HttpClient) { }
 
-  getEmpleados():Observable<any>{
-    return this.http.get<any>(`${this.baseURL}/usuarios`);
+  getEmpleados(token:string):Observable<any>{
+    const header: any = {
+      "Authorization": token
+    }
+
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      })
+    }
+    return this.http.get<any>(`${this.baseURL}/usuarios`, httpOption);
   }
 
   obtenerEmpleado(id:string){

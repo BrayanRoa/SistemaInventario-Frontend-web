@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor() { }
+  data:any[]=[];
+
+  constructor(private http: ProductosService) { }
 
   ngOnInit(): void {
+    this.http.getProductos(localStorage.getItem('token')!).subscribe(data=>{
+      this.data=data;
+    })
   }
 
 }
