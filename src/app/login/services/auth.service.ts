@@ -37,5 +37,10 @@ export class AuthService {
     );
   }
 
+
+  agregarEmpleado(empleado : any):Observable<any>{
+    return this.http.post<any>(`${this.baseURL}/auth/nuevo`, empleado);
+  }
+
   
 }

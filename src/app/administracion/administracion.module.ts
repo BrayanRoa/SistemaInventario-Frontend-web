@@ -15,7 +15,17 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 
+// NG MATERIAL
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 import { DataTablesModule } from "angular-datatables";
+import { NuevoProductoComponent } from './pages/productos/nuevo-producto/nuevo-producto.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditarProductoComponent } from './pages/productos/editar-producto/editar-producto.component';
+import { NuevaCategoriaComponent } from './pages/categorias/nueva-categoria/nueva-categoria.component';
+import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-empleado.component';
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -23,7 +33,11 @@ import { DataTablesModule } from "angular-datatables";
     CategoriasComponent,
     ProductosComponent,
     DashboardComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    NuevoProductoComponent,
+    EditarProductoComponent,
+    NuevaCategoriaComponent,
+    NuevoEmpleadoComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +46,11 @@ import { DataTablesModule } from "angular-datatables";
     NzIconModule,
     NzDropDownModule,
     NzButtonModule,
-    DataTablesModule
+    DataTablesModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }

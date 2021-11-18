@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseURL: "https://invent-web.herokuapp.com"
+  // baseURL: "https://invent-web.herokuapp.com" 
+  baseURL: "https://sistemainventario-api.herokuapp.com" 
 };
 
 /*

@@ -24,20 +24,21 @@ export class ProductosService {
 
   // TODO: ACOMODAR ESTE METODO, 
   agregarProducto(producto : any, token:string):Observable<any>{
-    const header: any = {
-      "Authorization": token
-    }
     const httpOption = {
-      headers: new HttpHeaders(header)
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}` // TODO: MUCHO CUIDADO DEJAR EL ESPACIO ENTRE LA PALABRA BEARER Y TOKEN
+      })
     }
     return this.http.post<any>(`${this.baseURL}/productos`, producto, httpOption);
   }
 
   // TODO: ACOMODAR EL METODO
   editarProducto(id:string, token:string, producto:any){
-    const headers = new HttpHeaders({
-      "Authorization": token
-    })
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}` // TODO: MUCHO CUIDADO DEJAR EL ESPACIO ENTRE LA PALABRA BEARER Y TOKEN
+      })
+    }
     return this.http.put<any>(`${this.baseURL}/productos/${id}`, producto);
   }
 }

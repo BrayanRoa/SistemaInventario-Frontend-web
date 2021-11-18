@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CategoriasService } from '../../services/categorias.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorias',
@@ -13,11 +16,21 @@ export class CategoriasComponent implements OnInit, OnDestroy {
   
   dtTrigger = new Subject<any>();
 
-  info : any | null []=[];
+  categorias : any | null []=[];
 
-  constructor(private http: HttpClient) { }
+  form! : FormGroup;
+
+  constructor(
+    private categoria: CategoriasService, 
+    private fb : FormBuilder,
+    private router : Router) { }
 
   ngOnInit(): void {
+
+    this.form = this.fb.group({
+      nombre : ["", Validators.required]
+    })
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
@@ -25,9 +38,8 @@ export class CategoriasComponent implements OnInit, OnDestroy {
         url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
       }
     };
-    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe(data=>{
-      console.log(data);
-      this.info=data;
+    this.categoria.getCategorias(localStorage.getItem('token')!).subscribe(data=>{
+      this.categorias=data;
       this.dtTrigger.next();
     })
   }
@@ -35,5 +47,13 @@ export class CategoriasComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
+  }
+
+  agregarCategoria(){
+    this.categoria.agregarCategoria(this.form.value, localStorage.getItem('token')!).subscribe(data=>{
+      console.log(data);
+      window.location.reload()
+      // this.router.navigateByUrl("/administracion/categorias")
+    })
   }
 }
