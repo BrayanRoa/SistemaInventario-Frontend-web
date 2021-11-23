@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { EmpleadosService } from 'src/app/administracion/services/empleados.service';
 import { EmpleadosComponent } from '../empleados.component';
 
@@ -18,7 +19,8 @@ export class EditEmpleadoComponent implements OnInit {
     private fb: FormBuilder,
     private empleados: EmpleadosService,
     private aRoute: ActivatedRoute,
-    private router : Router) {
+    private router : Router,
+    private toastr : ToastrService) {
     this.form = this.fb.group({
       nombre: ["", Validators.required],
       nombreUsuario : ["", Validators.required],
@@ -47,7 +49,14 @@ export class EditEmpleadoComponent implements OnInit {
   actualizarEmpleado(){
     this.empleados.actualizarUsuario(this.id, localStorage.getItem('token')!, this.form.value).subscribe(data=>{
       console.log(data);
+      this.toastr.success('Empleado Actualizado Con Exito!', 'Actualizado',{
+        positionClass: 'toast-bottom-right'
+      });
       this.router.navigateByUrl("/administracion/empleados");
+    },error=>{
+      this.toastr.error(`${error.error}`, 'Error',{
+        positionClass: 'toast-bottom-right'
+      });
     })
   }
 

@@ -3,6 +3,7 @@ import { CategoriasService } from 'src/app/administracion/services/categorias.se
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ProductosService } from 'src/app/administracion/services/productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-editar-producto',
@@ -22,7 +23,8 @@ export class EditarProductoComponent implements OnInit {
     private fb : FormBuilder,
     private pro : ProductosService,
     private aRoute : ActivatedRoute,
-    private router : Router) { }
+    private router : Router,
+    private toastr : ToastrService) { }
 
   ngOnInit(): void {
     this.id = this.aRoute.snapshot.paramMap.get('id');
@@ -63,7 +65,14 @@ export class EditarProductoComponent implements OnInit {
   editarProducto(){
     this.pro.editarProducto(this.id, localStorage.getItem('token')!, this.form.value).subscribe(data=>{
       console.log(data);
+      this.toastr.success('Producto Actualizado Con Exito!', 'Actualizado',{
+        positionClass: 'toast-bottom-right'
+      });
       this.router.navigateByUrl("/administracion/productos");
+    },error=>{
+      this.toastr.error(`${error.error}`, 'Error',{
+        positionClass: 'toast-bottom-right'
+      });
     })
   }
 

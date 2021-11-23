@@ -27,7 +27,7 @@ import { EditarProductoComponent } from './pages/productos/editar-producto/edita
 import { NuevaCategoriaComponent } from './pages/categorias/nueva-categoria/nueva-categoria.component';
 import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-empleado.component';
 import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -53,7 +53,8 @@ import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empl
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class AdministracionModule { }
