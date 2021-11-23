@@ -35,15 +35,15 @@ export class EditarProductoComponent implements OnInit {
       iva        : ["", Validators.required],
       retencion  : ["", Validators.required],
       cantidad_minima : ["", Validators.required],
-      // idCategoria : ["", Validators.required]
+      categoria : ["", Validators.required]
     })
 
     
 
-    // this.categoria.getCategorias(localStorage.getItem('token')!).subscribe(data=>{
-    //   this.categorias=data;
-    //   console.log(this.categorias)
-    // })
+    this.categoria.getCategorias(localStorage.getItem('token')!).subscribe(data=>{
+      this.categorias=data;
+      console.log(this.categorias)
+    })
 
     this.obtenerProducto();
   }
@@ -57,10 +57,12 @@ export class EditarProductoComponent implements OnInit {
         iva:data.iva,
         retencion: data.retencion,
         cantidad_minima : data.cantidad_minima,
-        // idCategoria:data.idCategoria
+        categoria:data.categoria
       })
     });
   }
+
+ 
 
   editarProducto(){
     this.pro.editarProducto(this.id, localStorage.getItem('token')!, this.form.value).subscribe(data=>{
