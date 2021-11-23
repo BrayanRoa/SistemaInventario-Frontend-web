@@ -28,6 +28,7 @@ import { NuevaCategoriaComponent } from './pages/categorias/nueva-categoria/nuev
 import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-empleado.component';
 import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
 import { ToastrModule } from 'ngx-toastr';
+import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/editar-categoria.component';
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -41,6 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
     NuevaCategoriaComponent,
     NuevoEmpleadoComponent,
     EditEmpleadoComponent,
+    EditarCategoriaComponent,
   ],
   imports: [
     CommonModule,

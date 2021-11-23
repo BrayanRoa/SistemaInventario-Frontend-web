@@ -11,6 +11,7 @@ import { EditarProductoComponent } from './pages/productos/editar-producto/edita
 import { NuevaCategoriaComponent } from './pages/categorias/nueva-categoria/nueva-categoria.component';
 import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-empleado.component';
 import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
+import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/editar-categoria.component';
 
 const routes: Routes = [
   {path:"", component:PrincipalComponent, children:[
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path:"empleado/edit/:id", component:EditEmpleadoComponent},
     {path:"categorias", component:CategoriasComponent},
     {path:"nuevaCategoria", component:NuevaCategoriaComponent},
+    {path:"categoria/edit/:id", component:EditarCategoriaComponent},
     {path:"productos", component:ProductosComponent},
     {path:"nuevoProducto", component:NuevoProductoComponent},
     {path:"producto/edit/:id", component:EditarProductoComponent},
