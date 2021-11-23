@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { CategoriasService } from '../../services/categorias.service';
 import { ProductosService } from '../../services/productos.service';
 
 @Component({
@@ -15,7 +16,11 @@ export class ProductosComponent implements OnInit {
 
   data:any[]=[];
 
-  constructor(private http: ProductosService) { }
+  categorias : any =[]=[];
+
+  constructor(
+    private http: ProductosService,
+    private categoria : CategoriasService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -25,6 +30,26 @@ export class ProductosComponent implements OnInit {
         url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
       }
     };
+  
+    this.getProductos();
+
+    this.categoria.getCategorias(localStorage.getItem('token')!).subscribe(data=>{
+      this.categorias=data;
+    })    
+  }
+
+
+  buscarCategoria(id:string){
+    for (const cat of this.categorias) {
+      console.log("hola ", cat)
+      if(id===cat.id){
+        console.log({cat})
+        return cat.nombre;
+      }
+    }
+  }
+
+  getProductos(){
     this.http.getProductos(localStorage.getItem('token')!).subscribe(data=>{
       this.data=data;
       console.log({data})

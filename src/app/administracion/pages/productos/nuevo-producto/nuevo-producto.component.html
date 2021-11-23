@@ -1,6 +1,7 @@
-<div class="container-fluid">
+<div class="container" style="display: flex; justify-content: center; flex-wrap: wrap; background-color: white; padding: 25px; height: 100%;">
+    <div style="width: 60%;">
     <form [formGroup]="form">
-        <h1>Agregar Producto</h1>
+        <h1 style="text-align: center;">Agregar Producto</h1>
         <div class="row">
             <mat-form-field appearance="fill">
                 <mat-label>Nombre</mat-label>
@@ -50,15 +51,21 @@
         <div class="row">
             <mat-form-field appearance="fill">
                 <mat-label>Categoria</mat-label>
-                <mat-select formControlName="idCategoria">
+                <mat-select formControlName="categoria">
                     <mat-option *ngFor="let cat of categorias" value="{{cat.id}}">{{cat.nombre}}</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
-        <div class="bot">
-            <button [disabled]="form.invalid" class="btn btn-success btn-block" (click)="agregarProducto()">
+        
+        <div style="display: flex; justify-content: center; margin-bottom: 5px;">
+            <button class="btn btn-success btn-block" (click)="agregarProducto()">
                 Guardar
             </button>
         </div>
+
+        <div style="display: flex; justify-content: center; margin-bottom: 5px;">
+            <a class="btn btn-danger" routerLink="/administracion/productos">Volver</a>
+        </div>
     </form>
+</div>
 </div>

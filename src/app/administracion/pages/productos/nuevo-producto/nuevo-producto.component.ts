@@ -28,7 +28,7 @@ export class NuevoProductoComponent implements OnInit {
       iva : ["", Validators.required],
       retencion : ["", Validators.required],
       cantidad_minima : ["", Validators.required],
-      idCategoria : ["", Validators.required]
+      categoria : ["", Validators.required]
     })
 
     this.categoria.getCategorias(localStorage.getItem('token')!).subscribe(data=>{

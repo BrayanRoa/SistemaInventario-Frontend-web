@@ -1,6 +1,10 @@
-<div class="container-fluid">
+<div class="container" style="display: flex; justify-content: center; flex-wrap: wrap; background-color: white; padding: 25px; height: 100%;">
+    <div style="width: 60%;">
+    
+    
+
     <form [formGroup]="form">
-        <h1>AGREGAR EMPLEADOS</h1>
+        <h1 style="text-align: center;">AGREGAR EMPLEADOS</h1>
 
         <div class="row">
             <mat-form-field appearance="fill">
@@ -39,8 +43,9 @@
         </div>       
 
 
-        <button [disabled]="form.invalid" class="btn btn-success btn-block" (click)="agregarEmpleado()">
+        <button  class="btn btn-success btn-block" (click)="agregarEmpleado()">
             Guardar
         </button>
     </form>
+</div>
 </div>

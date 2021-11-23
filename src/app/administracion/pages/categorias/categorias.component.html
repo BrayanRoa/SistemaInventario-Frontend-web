@@ -24,12 +24,18 @@
           <tr>
             <th>ID</th>
             <th>NOMBRE</th>
+            <th>EDITAR</th>
           </tr>
         </thead >
         <tbody>
           <tr *ngFor="let data of categorias">
             <td>{{data.id}}</td>
             <td>{{data.nombre}}</td>
+            <td>
+              <a [routerLink]="['/administracion/categoria/edit/',data.id]" style="color: green;">
+                <i class="fas fa-edit"></i>
+              </a>
+            </td>
           </tr>
         </tbody>
       </table>

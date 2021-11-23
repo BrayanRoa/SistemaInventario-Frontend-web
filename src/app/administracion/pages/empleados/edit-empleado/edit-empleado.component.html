@@ -1,6 +1,8 @@
-<div class="container-fluid">
+<div class="container" style="display: flex; justify-content: center; flex-wrap: wrap; background-color: white; padding: 25px; height: 100%;">
+    <div style="width: 60%;">
+    
     <form [formGroup]="form">
-        <h1>EDITAR EMPLEADOS</h1>
+        <h1 style="text-align: center;">EDITAR EMPLEADOS</h1>
 
         <div class="row">
             <mat-form-field appearance="fill">
@@ -12,7 +14,7 @@
         <div class="row">
             <mat-form-field appearance="fill">
                 <mat-label>id</mat-label>
-                <input formControlName="id" type="text" matInput>
+                <input formControlName="id" type="text" matInput readonly>
             </mat-form-field>
         </div>
 
@@ -20,7 +22,7 @@
             <div class="col">
                 <mat-form-field appearance="fill">
                     <mat-label>Nombre Usuario</mat-label>
-                    <input formControlName="nombreUsuario" type="text" matInput>
+                    <input formControlName="nombreUsuario" type="text" matInput readonly>
             </mat-form-field>
         </div>
 
@@ -37,4 +39,5 @@
             Guardar
         </button>
     </form>
+</div>
 </div>
