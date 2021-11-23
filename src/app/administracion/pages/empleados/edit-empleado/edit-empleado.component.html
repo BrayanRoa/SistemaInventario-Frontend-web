@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <form [formGroup]="form">
-        <h1>AGREGAR EMPLEADOS</h1>
+        <h1>EDITAR EMPLEADOS</h1>
 
         <div class="row">
             <mat-form-field appearance="fill">
@@ -10,26 +10,20 @@
         </div>
 
         <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>id</mat-label>
+                <input formControlName="id" type="text" matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
             <div class="col">
                 <mat-form-field appearance="fill">
                     <mat-label>Nombre Usuario</mat-label>
                     <input formControlName="nombreUsuario" type="text" matInput>
-                </mat-form-field>
-            </div>
+            </mat-form-field>
+        </div>
 
-            <div class="col">
-                <mat-form-field appearance="fill">
-                    <mat-label>password</mat-label>
-                    <input formControlName="password" type="text" matInput>
-                </mat-form-field>
-            </div>
-
-            <!-- <div class="col">
-                <mat-form-field appearance="fill">
-                    <mat-label>Rol</mat-label>
-                    <input formControlName="rol" value="1" type="text" matInput>
-                </mat-form-field>
-            </div> -->
         </div>
         <div class="row">
             <mat-form-field appearance="fill">
@@ -39,7 +33,7 @@
         </div>       
 
 
-        <button [disabled]="form.invalid" class="btn btn-success btn-block" (click)="agregarEmpleado()">
+        <button [disabled]="form.invalid" class="btn btn-success btn-block" (click)="actualizarEmpleado()">
             Guardar
         </button>
     </form>

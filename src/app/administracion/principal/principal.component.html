@@ -15,11 +15,11 @@
             <a routerLink="dashboard"></a>
           </li>
   
-        <li nz-menu-item>
+        <!-- <li nz-menu-item>
           <i nz-icon nzType="car" nzTheme="outline" style="font-size: 20px"></i>
           <span>Proveedores</span>
           <a routerLink="proveedores"></a>
-        </li>
+        </li> -->
   
         <li nz-menu-item>
           <i nz-icon nzType="cluster" nzTheme="outline" style="font-size: 20px"></i>
@@ -56,7 +56,7 @@
           <div class="sesion" style="padding-right: 25px;">
           
             <nz-button-group>
-              <button nz-button (click)="log()"></button>
+              <button nz-button (click)="log()">{{nombre}}</button>
               <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomRight">
                 <i nz-icon nzType="user"></i>
               </button>
@@ -65,7 +65,7 @@
             <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul nz-menu>
                 <li nz-menu-item>Editar Perfil</li>
-                <li nz-menu-item (click)="salir()" routerLink="/inicio"> <a href=""></a> Cerrar Sesión</li>
+                <li nz-menu-item (click)="salir()" routerLink="/inicio"><a href=""></a> Cerrar Sesión</li>
               </ul>
             </nz-dropdown-menu>
           </div>

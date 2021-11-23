@@ -26,6 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditarProductoComponent } from './pages/productos/editar-producto/editar-producto.component';
 import { NuevaCategoriaComponent } from './pages/categorias/nueva-categoria/nueva-categoria.component';
 import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-empleado.component';
+import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
+
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -37,7 +39,8 @@ import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-e
     NuevoProductoComponent,
     EditarProductoComponent,
     NuevaCategoriaComponent,
-    NuevoEmpleadoComponent
+    NuevoEmpleadoComponent,
+    EditEmpleadoComponent,
   ],
   imports: [
     CommonModule,

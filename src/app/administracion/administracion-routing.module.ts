@@ -10,17 +10,19 @@ import { NuevoProductoComponent } from './pages/productos/nuevo-producto/nuevo-p
 import { EditarProductoComponent } from './pages/productos/editar-producto/editar-producto.component';
 import { NuevaCategoriaComponent } from './pages/categorias/nueva-categoria/nueva-categoria.component';
 import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-empleado.component';
+import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
 
 const routes: Routes = [
   {path:"", component:PrincipalComponent, children:[
     {path:"dashboard", component:DashboardComponent},
     {path:"empleados", component:EmpleadosComponent},
-      {path:"nuevoEmpleado", component:NuevoEmpleadoComponent},
+    {path:"nuevoEmpleado", component:NuevoEmpleadoComponent},
+    {path:"empleado/edit/:id", component:EditEmpleadoComponent},
     {path:"categorias", component:CategoriasComponent},
-      {path:"nuevaCategoria", component:NuevaCategoriaComponent},
+    {path:"nuevaCategoria", component:NuevaCategoriaComponent},
     {path:"productos", component:ProductosComponent},
-      {path:"nuevoProducto", component:NuevoProductoComponent},
-      {path:"edit/:id", component:EditarProductoComponent},
+    {path:"nuevoProducto", component:NuevoProductoComponent},
+    {path:"producto/edit/:id", component:EditarProductoComponent},
     {path:"proveedores", component:ProveedoresComponent},
     {path:"**", redirectTo:"dashboard"}
   ]}

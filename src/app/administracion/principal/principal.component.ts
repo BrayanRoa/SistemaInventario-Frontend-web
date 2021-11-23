@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/login/services/auth.service';
 
 @Component({
   selector: 'app-principal',
@@ -9,10 +10,12 @@ import { Router } from '@angular/router';
 export class PrincipalComponent implements OnInit {
 
   isCollapsed = false;
+  nombre : string ="";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.nombre=this.auth.getUserName();
   }
 
   log(): void {

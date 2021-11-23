@@ -27,6 +27,7 @@ export class ProductosComponent implements OnInit {
     };
     this.http.getProductos(localStorage.getItem('token')!).subscribe(data=>{
       this.data=data;
+      console.log({data})
       this.dtTrigger.next();
     })
   }

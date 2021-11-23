@@ -34,11 +34,26 @@ export class AuthService {
         console.log(respuesta);
         if(respuesta.token!=""){
           localStorage.setItem('token', respuesta.token)
+          this.getUserName();
         }
       })
     );
   }
 
+  public getUserName(): string {
+    const token = this.getToken();
+    const payload = token.split('.')[1];
+    const payloadDecoded = atob(payload);
+    const values = JSON.parse(payloadDecoded);
+    const username = values.sub;
+    console.log({username});
+    return username;
+    
+  }
+
+  public getToken():any{
+    return localStorage.getItem('token');
+  }
 
   agregarEmpleado(empleado : any):Observable<any>{
     return this.http.post<any>(`${this.baseURL}/auth/nuevo`, empleado);
