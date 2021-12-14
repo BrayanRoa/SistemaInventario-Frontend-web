@@ -29,6 +29,7 @@ import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-e
 import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
 import { ToastrModule } from 'ngx-toastr';
 import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/editar-categoria.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -43,6 +44,7 @@ import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/ed
     NuevoEmpleadoComponent,
     EditEmpleadoComponent,
     EditarCategoriaComponent,
+    ClientesComponent,
   ],
   imports: [
     CommonModule,
