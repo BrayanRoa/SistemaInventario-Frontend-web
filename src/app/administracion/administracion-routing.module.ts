@@ -15,6 +15,9 @@ import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/ed
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { NuevoClienteComponent } from './pages/clientes/nuevo-cliente/nuevo-cliente.component';
 import { EditClienteComponent } from './pages/clientes/edit-cliente/edit-cliente.component';
+import { ComprasProveedoresComponent } from './pages/compras-proveedores/compras-proveedores.component';
+import { VerCompraComponent } from './pages/compras-proveedores/ver-compra/ver-compra.component';
+import { NuevaCompraComponent } from './pages/compras-proveedores/nueva-compra/nueva-compra.component';
 
 const routes: Routes = [
   {path:"", component:PrincipalComponent, children:[
@@ -32,6 +35,9 @@ const routes: Routes = [
     {path:"clientes", component:ClientesComponent},
     {path:"nuevoCliente", component:NuevoClienteComponent},
     {path:"cliente/edit/:id", component:EditClienteComponent},
+    {path:"compraProveedores", component:ComprasProveedoresComponent},
+    {path:"verCompra/:id", component:VerCompraComponent},
+    {path:"nuevaCompra", component:NuevaCompraComponent},
     {path:"**", redirectTo:"dashboard"}
   ]}
 ];

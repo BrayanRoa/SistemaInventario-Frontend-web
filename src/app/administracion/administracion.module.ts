@@ -33,6 +33,11 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NuevoClienteComponent } from './pages/clientes/nuevo-cliente/nuevo-cliente.component';
 import { EditClienteComponent } from './pages/clientes/edit-cliente/edit-cliente.component';
+import { ComprasProveedoresComponent } from './pages/compras-proveedores/compras-proveedores.component';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { VerCompraComponent } from './pages/compras-proveedores/ver-compra/ver-compra.component';
+import { NuevaCompraComponent } from './pages/compras-proveedores/nueva-compra/nueva-compra.component';
+
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -50,6 +55,9 @@ import { EditClienteComponent } from './pages/clientes/edit-cliente/edit-cliente
     ClientesComponent,
     NuevoClienteComponent,
     EditClienteComponent,
+    ComprasProveedoresComponent,
+    VerCompraComponent,
+    NuevaCompraComponent,
   ],
   imports: [
     CommonModule,
@@ -64,7 +72,8 @@ import { EditClienteComponent } from './pages/clientes/edit-cliente/edit-cliente
     MatSelectModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    NzTagModule
+    NzTagModule,
+    NzPopoverModule
   ]
 })
 export class AdministracionModule { }
