@@ -13,6 +13,8 @@ import { NuevoEmpleadoComponent } from './pages/empleados/nuevo-empleado/nuevo-e
 import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empleado.component';
 import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/editar-categoria.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { NuevoClienteComponent } from './pages/clientes/nuevo-cliente/nuevo-cliente.component';
+import { EditClienteComponent } from './pages/clientes/edit-cliente/edit-cliente.component';
 
 const routes: Routes = [
   {path:"", component:PrincipalComponent, children:[
@@ -28,6 +30,8 @@ const routes: Routes = [
     {path:"producto/edit/:id", component:EditarProductoComponent},
     {path:"proveedores", component:ProveedoresComponent},
     {path:"clientes", component:ClientesComponent},
+    {path:"nuevoCliente", component:NuevoClienteComponent},
+    {path:"cliente/edit/:id", component:EditClienteComponent},
     {path:"**", redirectTo:"dashboard"}
   ]}
 ];

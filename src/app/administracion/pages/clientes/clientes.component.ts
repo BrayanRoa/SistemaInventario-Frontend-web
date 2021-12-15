@@ -19,20 +19,31 @@ export class ClientesComponent implements OnInit {
   
   dtTrigger = new Subject<any>();
 
-  proveedores : any =[]=[];
+  clientes : any =[]=[];
 
-  form = new FormGroup({
-    nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    body: new FormControl('', Validators.required)
-  });
-  constructor(private http: ClientesService,
-    private fb : FormBuilder,
+  
+
+  constructor(
+    private http: ClientesService,
     private router : Router,
     private toastr : ToastrService
     ) { }
 
+
   ngOnInit(): void {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 5,
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json'
+      }
+    };
+    this.http.getClientes(localStorage.getItem('token')!).subscribe(data=>{
+      this.clientes=data;
+      this.dtTrigger.next();
+    })
   }
+
+  
 
 }

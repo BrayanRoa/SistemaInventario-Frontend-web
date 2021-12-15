@@ -30,6 +30,9 @@ import { EditEmpleadoComponent } from './pages/empleados/edit-empleado/edit-empl
 import { ToastrModule } from 'ngx-toastr';
 import { EditarCategoriaComponent } from './pages/categorias/editar-categoria/editar-categoria.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NuevoClienteComponent } from './pages/clientes/nuevo-cliente/nuevo-cliente.component';
+import { EditClienteComponent } from './pages/clientes/edit-cliente/edit-cliente.component';
 @NgModule({
   declarations: [
     PrincipalComponent,
@@ -45,6 +48,8 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     EditEmpleadoComponent,
     EditarCategoriaComponent,
     ClientesComponent,
+    NuevoClienteComponent,
+    EditClienteComponent,
   ],
   imports: [
     CommonModule,
@@ -59,6 +64,7 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     MatSelectModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
+    NzTagModule
   ]
 })
 export class AdministracionModule { }
